@@ -17,9 +17,10 @@ Makefile for carton and perl version?
 * HTML5
 * REST(y)
 * Posts
-** Calendared
+  * Calendared
 * Multiple authors? Or is that too much?
 * HTTPS
+* Scriptable deployment or else why bother?
 
 # TDD
 …
