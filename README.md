@@ -13,7 +13,7 @@ Makefile for carton and perl version?
 
 # Specification
 
-# TDD such that implementation is “just an exercise in details”
+* TDD such that implementation is “just an exercise in details”
 * HTML5
 * REST(y)
 * Posts
