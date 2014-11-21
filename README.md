@@ -1,4 +1,11 @@
 exigu
 =====
+_An experimental microblog platform._
 
-An experimental microblog platform. 
+Steps...
+
+bootstrap carton?
+
+...write up steps...
+
+Makefile for carton and perl version?
