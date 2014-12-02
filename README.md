@@ -11,7 +11,7 @@ bootstrap carton?
 Makefile for carton and perl version?
 
 
-# Specification
+## Specification
 
 * TDD such that implementation is “just an exercise in details”
 * HTML5
@@ -22,5 +22,13 @@ Makefile for carton and perl version?
 * HTTPS
 * Scriptable deployment or else why bother?
 
-# TDD
+## TDD
 …
+
+## Schema
+
+## Libraries to consider including
+
+* https://github.com/mourner/dead-simple-grid
+* http://semantic-ui.com/
+* https://github.com/hakimel/reveal.js exquisite library... not sure how portable etc.
