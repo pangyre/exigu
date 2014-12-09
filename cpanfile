@@ -1,5 +1,5 @@
 # Meta.
-requires "5.16.2"; # Too high? Or just right?
+# Does not work this way -> requires "5.16.2";
 requires "strictures";
 
 # Code correctness and utilities.

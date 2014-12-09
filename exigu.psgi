@@ -35,10 +35,10 @@ my $Routes = "Router::R3"->new(
     # "Home."
     "/" => { "*" => sub {} },
     # Entries.
-    "/x/{id:\d+}" => { GET => sub {},
-                       POST => sub {},
-                       DELETE => sub {},
-                       PUT => sub {} },
+    q|/x/{id:\d+}| => { GET => sub {},
+                        POST => sub {},
+                        DELETE => sub {},
+                        PUT => sub {} },
     # Static content.
     "/{page:.+}" => { "*" => sub {} },
     );
