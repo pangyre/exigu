@@ -20,11 +20,15 @@ test_requires "Test::Fatal" => undef;
 
 # build_requires "Path::Class" => undef;
 
-system( 'pod2text exigu.psgi > README' );
+if ( $Module::Install::AUTHOR )
+{
+    system "pod2markdown exigu.psgi README.md";
+}
 
 # install_script glob("script/*.pl");
 
-auto_install;
+cpanfile;
+# auto_install;? 
 
 WriteAll;
 
