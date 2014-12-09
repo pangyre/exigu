@@ -15,6 +15,9 @@ use Data::Dump "dump";
 use Router::R3;
 use HTML::Entities;
 
+our $VERSION = "0.01";
+our $AUTHORITY = 'cpan:ASHLEY';
+
 package Exigu v0.0.1 {
     use Moo;
     use Path::Tiny;
