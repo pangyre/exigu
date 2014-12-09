@@ -16,5 +16,6 @@ if ( $Module::Install::AUTHOR )
 
 # install_script glob("script/*.pl");
 
-
 exit 0;
+
+__END__
