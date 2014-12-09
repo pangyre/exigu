@@ -38,10 +38,9 @@ requires "SQL::Translator" => "0.11018";
 # Not yet? At all? requires "Type::Tiny" => "0.038";
 
 # requires "Data::Dump "dump"";
-
 on build => sub {
-   requires "Module::Install::CPANfile";
-   requires "Module::CPANfile::Result";
+      requires "Module::CPANfile::Result";
+      # requires "Module::Install::CPANfile";
 };
 
 on test => sub {
