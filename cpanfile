@@ -48,4 +48,5 @@ on test => sub {
     requires "Test::Fatal" => "0.01";
     requires "Pod::Coverage::Moose" => "0.05";
     requires "Time::HiRes" => "1.9726";
+    requires "Plack::Test";
 };
