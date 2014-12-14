@@ -15,7 +15,6 @@ use Data::Dump "dump";
 use Router::R3;
 use HTML::Entities;
 
-our $VERSION = "0.01";
 our $AUTHORITY = 'cpan:ASHLEY';
 
 package Exigu v0.0.1 {
@@ -48,32 +47,32 @@ my $Routes = "Router::R3"->new(
 
 sub {
     my $env = shift; # PSGI env
-    my $mss = "MSS"->new( request => Plack::Request->new($env),
+    my $exigu = "EXIGU"->new( request => Plack::Request->new($env),
                           response => Plack::Response->new(HTTP_NOT_FOUND) );
     # response => Plack::Response->new( status => +HTTP_NOT_FOUND ) );
     # ROUTING/DISPATCH--------------
     my ( $match, $captures ) = $Routes->match( $env->{PATH_INFO} );
     # Defaults.
-    $mss->response->status(HTTP_OK) if $match;
-    $mss->response->content_type("text/plain; charset=utf8");                     
+    $exigu->response->status(HTTP_OK) if $match;
+    $exigu->response->content_type("text/plain; charset=utf8");                     
     if ( $match )
     {
         if ( my $sub = $match->{ $env->{REQUEST_METHOD} } || $match->{"*"} )
         {
-            eval { $sub->($mss,$captures) } || warn $/, $@, $/;
+            eval { $sub->($exigu,$captures) } || warn $/, $@, $/;
         }
     }
 
-    $mss->response->body([ encode "UTF-8",
+    $exigu->response->body([ encode "UTF-8",
                            join "\n",
                            join(" ",
-                                status_message( $mss->response->status ),
+                                status_message( $exigu->response->status ),
                                 decode "UTF-8", $env->{PATH_INFO}),
                            "match: " . dump($match), dump($captures),
                            dump($env), dump([keys %INC]) ])
-        unless $mss->response->body;
+        unless $exigu->response->body;
 
-    $mss->response->finalize;
+    $exigu->response->finalize;
 };
 
 __DATA__
@@ -81,7 +80,7 @@ __DATA__
 /tmp/dicom.dcm
 /tmp/jpeg.jpg
 
-package MSS::Dispatch 0.01 {
+package EXIGU::Dispatch 0.01 {
     use Router::R3;
 
 
@@ -107,6 +106,20 @@ Exigu - B<experimental> microblogging platform.
 =over 4
 
 =item *
+
+=back
+
+=head1 Dispatch Map
+
+=over 4
+
+=item * GET /x
+
+=item * POST /x
+
+=item * GET /x/{post_id}/{optional_post_slug_title}
+
+=item * PUT /x/{post_id}
 
 =back
 
