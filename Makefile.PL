@@ -4,17 +4,21 @@ use warnings;
 
 name "Exigu";
 all_from "exigu.psgi";
+# Apparently a no-op, perl_version_from "lib/Wren.pm";
+
+# This is stupid... tools should do it on their own.
+use lib "lib";
+require "exigu.psgi";
+version "Exigu"->VERSION;
 
 cpanfile;
+
 # auto_install;? 
+
 WriteAll;
 
-if ( $Module::Install::AUTHOR )
-{
-    system "pod2markdown exigu.psgi README.md";
-}
-
-# install_script glob("script/*.pl");
+system "pod2markdown exigu.psgi README.md"
+    if $Module::Install::AUTHOR;
 
 exit 0;
 

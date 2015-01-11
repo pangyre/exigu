@@ -8,6 +8,19 @@ Exigu - **experimental** microblogging platform.
 
 - 
 
+# Dispatch Map
+
+## User
+
+https://github.com/pangyre/p5-yesh/blob/master/lib/Yesh/Manual.pod
+
+## Post
+
+- GET /x
+- POST /x
+- GET /x/{post\_id}/{optional\_post\_slug\_title}
+- PUT /x/{post\_id}
+
 # Code Repository
 
 [http://github.com/pangyre/exigu](http://github.com/pangyre/exigu).

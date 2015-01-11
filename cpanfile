@@ -39,7 +39,8 @@ requires "SQL::Translator" => "0.11018";
 
 # requires "Data::Dump "dump"";
 on build => sub {
-      requires "Module::CPANfile::Result";
+    requires "Module::Install::CPANfile";
+    requires "Module::CPANfile::Result";
       # requires "Module::Install::CPANfile";
 };
 

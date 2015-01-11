@@ -111,6 +111,12 @@ Exigu - B<experimental> microblogging platform.
 
 =head1 Dispatch Map
 
+=head2 User
+
+https://github.com/pangyre/p5-yesh/blob/master/lib/Yesh/Manual.pod
+
+=head2 Post
+
 =over 4
 
 =item * GET /x
